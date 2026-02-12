@@ -1,9 +1,13 @@
+
+import java.util.*;
 public class GarbageCollection {
     
     // TODO: Override the finalize() method
     // protected void finalize()
     // Inside it, print "Garbage Collected"
-
+	 public GarbageCollection() {
+        System.out.println("Object Created");
+    }
     public static void main(String[] args) {
         // TODO: Create an object of GarbageCollection class
         
@@ -13,5 +17,14 @@ public class GarbageCollection {
         
         // Tip: You might need a small delay or simply exiting might trigger it in some JVMs, 
         // but System.gc() is the standard call.
-    }
+
+
+	 GarbageCollection obj = new GarbageCollection();
+
+        obj = null;   
+        System.gc();  
+        System.out.println("Garbage Collected");
+   
+	 }
+
 }
